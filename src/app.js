@@ -166,11 +166,12 @@ function sortChocolateBasedOnCount(chocolates)
       let sorted_color_array=[];
       for(var i=0;i<color.length;i++)
       {
-          for(var j=0;j<arr[i];j++)
-          {
+        for(var j=0;j<arr[i];j++)
+        {
               sorted_color_array.push(color[i]);
-          }
-      }
+          } 
+        }
+      
       return sorted_color_array;
 }
 
@@ -209,8 +210,12 @@ function changeChocolateColorAllOfxCount(chocolates,color,finalColor)
 {
     var count=0;
     let arr=[];
+    let b=[];
     if(chocolates.length==0)
-  return arr.push(count,chocolates);
+    {
+  arr.push(count,b);
+  return arr;
+    }
 
   else
  {
@@ -219,22 +224,30 @@ function changeChocolateColorAllOfxCount(chocolates,color,finalColor)
         if(chocolates[i]==finalColor)
         return "Can't replace the same chocolates";
         
-        else (chocolates[i]==color)
+        else if(chocolates[i]==color)
         {
             chocolates[i]=finalColor;
+            
             
         }
 
     }
+}
     for(var i=0;i<chocolates.length;i++)
     {
         if(chocolates[i]==finalColor)
+        {
         count ++;
-    }
-    
-  return  arr.push(count,chocolates);
+        b.push(chocolates[i]);
+        
+        }
 
-}
+    }
+
+    
+   arr.push(count,b);
+ return arr;
+
 }
 
 
